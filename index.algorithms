@@ -1,0 +1,39 @@
+ALGORITHM
+VAR
+sentence: string;
+i: Integer:= 0
+r: Integer:= 0
+n: Integer:= 0
+BEGIN
+REPEAT
+    write("The most beautiful life.")
+    read(sentence);
+UNTIL (sentence[0]<>' ')
+WHILE (sentence[i]<>'.') DO //
+    IF (sentence[i]=' ') THEN
+     r:=r+1;
+ELSE
+SWITCH (sentence[i]) DO //recherche des voyelles
+        case "a" : n := n+1; break;
+        case "e" : n := n+1; break;
+        case "o" : n := n+1; break;
+        case "u" : n := n+1; break;
+        case "i" : n := n+1; break;
+        case "y" : n := n+1; break;
+END_SWITCH
+END_IF    
+    i := i+1;
+END_WHILE
+write("length of the sentence = ", i+1);
+write("nbr of vowels =", n);
+    IF ((sentence[0]=' ' and sentence[i-1]<>' ') or (sentence[0]<>' ' and sentence[i-1]=' ') ) 
+    THEN
+    write("Nbr of words =", r);   
+ELSE_IF (sentence[0]=' ' and sentence[i-1]=' ') 
+    THEN
+    write("Nbr of words =", r-1);
+ELSE
+    write("Nbr of words =", r+1);
+END_IF
+
+END
